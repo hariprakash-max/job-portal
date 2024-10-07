@@ -1,0 +1,36 @@
+let navbar = document.querySelector('.header .flex .navbar');
+
+document.querySelector('#menu-btn').onclick = () => {
+    navbar.classList.toggle('active');
+}
+
+window.onscroll = () => {
+    navbar.classList.remove('active');
+}
+
+document.querySelectorAll('input[type="number"]').forEach(inputNumber => {
+    inputNumber.oninput = () => {
+        if (inputNumber.value.length > inputNumber.maxLength) inputNumber.value
+            = inputNumber.value.slice(0, inputNumber.maxLength);
+    };
+});
+
+// -------------------------------------------------------------------------------------------------
+
+let btn = document.getElementById("btn");
+let btnText = document.getElementById("btnText");
+let btnIcon = document.getElementById("btnIcon");
+
+btn.onclick = function () {
+    document.body.classList.toggle("dark-theme");
+
+    if (document.body.classList.contains("dark-theme")) {
+        btnIcon.src = "images/sun.png";
+        btnText.innerHTML = "Light";
+    } else {
+        btnIcon.src = "images/moon.png";
+        btnText.innerHTML = "Dark";
+    }
+
+}
+// ----------------------------------------------------------------------------------------------------
